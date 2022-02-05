@@ -29,19 +29,19 @@ const Contact = () => {
   return (
     <section id="contact"> 
        <Container className="section-top"> 
-            <Row>
-              <Col md={4}>
-                <h4 className="text-end fw-bolder" data-aos="fade-right">Enough about me,<br/><span className="accent">let's talk</span> about you </h4>
-              </Col>
+        <Row>
+          <Col md={4}>
+            <h4 className="text-end fw-bolder" data-aos="fade-right">Enough about me,<br/><span className="accent">let's talk</span> about you </h4>
+          </Col>
           
-              <Col md={1}></Col>
+          <Col md={1}></Col>
     
               <Col md={7} data-aos="fade-left">
 
-                <Form name="contact" method="POST" data-netlify="true" action="/thankyou#contact"netlify-honeypot="bot-field">
+                <Form name="contact" method="POST" data-netlify="true" action="/thankyou#contact" netlify-honeypot="bot-field">
                 <p className="hidden">
                   <label>
-                    Dont fill this out if youre human: <input name="bot-field" type="hidden" value="contact" />
+                    Dont fill this out if youre human: <input name="bot-field" name="form-name" type="hidden" value="contact" />
                   </label>
                 </p>
                 <Row>
@@ -95,15 +95,9 @@ const Contact = () => {
                 SUBMIT
               </Button>
             </Form>
-
           </Col>          
         </Row>
       </Container>  
-
-
-
-
-
     </section>
   )
 }
