@@ -30,15 +30,15 @@
     <>
         <Navbar id="header" className="nav sticky-top" variant="dark" expand="lg">
             <Container >
-                <Navbar.Brand href="#hero">mohan<span className="fw-bold">KUMAR</span></Navbar.Brand>
+                <Navbar.Brand href="/#hero">mohan<span className="fw-bold">KUMAR</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="text-center">
-                        <Nav.Link className="ps-5" href="#about">About</Nav.Link>
-                        <Nav.Link className="ps-5" href="#services">Services</Nav.Link>
-                        <Nav.Link className="ps-5" href="#work">Work</Nav.Link>
-                        <Nav.Link className="ps-5" href="#process">Process</Nav.Link>
-                        <Nav.Link className="ps-5" href="#contact">Contact</Nav.Link>  
+                        <Nav.Link className="ps-5" href="/#about">About</Nav.Link>
+                        <Nav.Link className="ps-5" href="/#services">Services</Nav.Link>
+                        <Nav.Link className="ps-5" href="/#work">Work</Nav.Link>
+                        <Nav.Link className="ps-5" href="/#process">Process</Nav.Link>
+                        <Nav.Link className="ps-5" href="/#contact">Contact</Nav.Link>  
                     </Nav>
                 </Navbar.Collapse>
             </Container>
