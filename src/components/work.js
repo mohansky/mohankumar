@@ -72,7 +72,7 @@ const Work = () => {
                   className="mx-auto"
                   layout="constrained"
                   formats={["auto", "webp", "avif"]}
-                  src="../images/work/as.JPG" 
+                  src="../images/work/as.jpg" 
                   quality={95}
                   alt="arrow"
                   /> 
