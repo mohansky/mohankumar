@@ -38,19 +38,23 @@ const Contact = () => {
     
           <Col md={7} data-aos="fade-left">
 
-            <Form>
-
+            <Form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <p className="hidden">
+              <label>
+                Dont fill this out if youre human: <input name="bot-field" />
+              </label>
+            </p>
             <Row>
               <Col xs={12} md={6}>
               <Form.Group className="mb-5" controlId="formName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="name" placeholder="Name" /> 
+                <Form.Control type="name" name="name" placeholder="Name" /> 
               </Form.Group>
               </Col>
               <Col xs={12} md={6}>
               <Form.Group className="mb-5" controlId="formEmail">
                 <Form.Label>E-mail</Form.Label>
-                <Form.Control type="email" placeholder="E-mail" />
+                <Form.Control type="email" name="email" placeholder="E-mail" />
               </Form.Group>
               </Col>
             </Row>
@@ -84,13 +88,13 @@ const Contact = () => {
 
             <Form.Group className="mb-5" controlId="formMessage">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control as="textarea" name="message" rows={3} />
             </Form.Group>
 
             
 
 
-              <Button className="float-end btn-form"  type="submit">
+              <Button className="float-end btn-form" type="submit">
                 SUBMIT
               </Button>
             </Form>
