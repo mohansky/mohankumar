@@ -3,15 +3,16 @@ module.exports = {
     title: `MK Web Dev`,
     author: {
       name: `Mohan Kumar`,
-      summary: `who lives and works in Bangalore building useful things.`,
+      summary: `who lives and works in Bangalore building websites and other useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Hi, I'm Mohan and I develop websites. I'm a freelance web designer based in Bangalore. I enjoy photography, travelling and a good Rasam every now and then.`,
+    siteUrl: `https://mohankumardev.netlify.app`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `@mogsishere`,
     },
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     {
@@ -52,6 +53,20 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // {
+    //   resolve: "gatsby-plugin-google-tagmanager",
+    //   options: {
+    //     id: "YOUR_GOOGLE_TAGMANAGER_ID",
+    //     includeInDevelopment: false,
+    //     defaultDataLayer: { platform: "gatsby" }, 
+    //     gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+    //     gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+    //     dataLayerName: "YOUR_DATA_LAYER_NAME", 
+    //     routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
+    //     enableWebVitalsTracking: true,
+    //     selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
+    //   },
+    // },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
