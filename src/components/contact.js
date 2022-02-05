@@ -38,7 +38,7 @@ const Contact = () => {
     
               <Col md={7} data-aos="fade-left">
 
-                <Form name="contact" method="POST" data-netlify="true" action="/thankyou/#contact"netlify-honeypot="bot-field">
+                <Form name="contact" method="POST" data-netlify="true" action="/thankyou#contact"netlify-honeypot="bot-field">
                 <p className="hidden">
                   <label>
                     Dont fill this out if youre human: <input name="bot-field" type="hidden" value="contact" />
