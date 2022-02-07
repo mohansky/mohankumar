@@ -15,11 +15,19 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    `gatsby-remark-normalize-paths`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },  
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/homepage`,
+        name: `homepage`,
       },
     },
     {
