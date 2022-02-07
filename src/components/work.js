@@ -1,8 +1,8 @@
-/** CLASSES COMPONENT **/
+/** WORK COMPONENT **/
 
 import * as React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image" 
 import { Container, Card } from "react-bootstrap" 
 import Slider from "react-slick"
 
@@ -37,133 +37,78 @@ const Work = () => {
       }
     ]
   };
-  // const data = useStaticQuery(graphql`
-  //   query BioQuery {
-  //     site {
-  //       siteMetadata {
-  //         author {
-  //           name
-  //           summary
-  //         }
-  //         social {
-  //           twitter
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query WorkQuery {
+      works: markdownRemark(frontmatter: {title: {eq: "Work"}}) {
+        frontmatter {
+          title
+          subtitle1
+          subtitle2
+          workitems {
+            name
+            desc
+            url
+            tools
+            img {
+              childImageSharp {
+                gatsbyImageData(placeholder: TRACED_SVG)
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  // const author = data.site.siteMetadata?.author
-  // const social = data.site.siteMetadata?.social
+  // Set these values by editing "siteMetadata" in gatsby-config.js 
+  const work = data.works.frontmatter
 
   return (
     <section id="work">
 
       <Container className="section-top">
-
-        <h4 className="ms-5 mb-5 fw-bold" data-aos="fade-right">Stuff I've <span className="accent">created</span></h4>
-
+            <h4 className="ms-5 mb-5 fw-bold" data-aos="fade-right">
+                {work.subtitle1}
+              <span className="accent"> 
+                {work.subtitle2} </span>
+            </h4>
 
         <Slider {...settings}  >
-          <div >
-            <Card className="border-0 p-3">
-              <StaticImage
-                  className="mx-auto"
-                  layout="constrained"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/work/as.jpg" 
-                  quality={95}
-                  alt="arrow"
-                  /> 
-              <Card.Body className="text-center">
-                  <Card.Title>Atma Seva</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
-                  </Card.Text> 
-              </Card.Body>
-            </Card>
-          </div>
+          {work.workitems.map((items, index)=>{
+            const item = items 
+            const image = getImage(item.img.childImageSharp.gatsbyImageData)
+              return(
+                <a className="work-link" key={index} href={item.url} target="_blank" rel="noreferrer">
+                  <Card className="border-0 p-3">
+                    <GatsbyImage 
+                      image={image} 
+                      alt={item.name} 
+                      />
+                  <Card.Body className="text-center">
+                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Text> 
+                    <p>
+                    {item.desc}
+                    </p> 
+ 
 
-          <div>
-            <Card className="border-0 p-3">
-              <StaticImage
-                  className="mx-auto"
-                  layout="constrained"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/work/bjc.JPG" 
-                  quality={95}
-                  alt="arrow"
-                  /> 
-              <Card.Body className="text-center">
-                  <Card.Title>Berlinner Job Coach</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
+                    <ul className="list-group list-group-horizontal">
+                    {item.tools.map((toolitems)=>{
+                      const toolitem = toolitems
+                        return(
+                      <li class="list-group-item me-1 px-2 py-2 border-0 list-group-item-dark" key={index}>
+                        <small className="text-muted">{toolitem}</small>
+                      </li>
+                      )})} 
+                    </ul>
+                    
                   </Card.Text> 
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="border-0 p-3">
-              <StaticImage
-                  className="mx-auto"
-                  layout="constrained"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/work/lv.JPG"
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>La Volotte</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
-                  </Card.Text> 
-              </Card.Body>
-            </Card>
-          </div>
-          
-          <div>
-            <Card className="border-0 p-3">
-              <StaticImage
-                  className="mx-auto"
-                  layout="constrained"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/work/tti.JPG"
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>Toadlabs Technology Inc</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
-                  </Card.Text> 
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="border-0 p-3">
-              <StaticImage
-                  className="mx-auto"
-                  layout="constrained"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/work/dbus.JPG"
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>Deep Breathe Yoga Studio</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
-                  </Card.Text> 
-                </Card.Body>
-              </Card>
-            </div>
-          </Slider>
-
-      </Container>
-       
+                  </Card.Body>
+                  </Card>
+                </a>
+              )})} 
+            </Slider>
+          </Container>
     </section>
   )
 }

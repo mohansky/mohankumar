@@ -39,7 +39,7 @@ const Hero = () => {
         /> 
         <div className="hero-text"  >
           <StaticImage
-            className="avatar mx-auto mb-5"
+            className="avatar mx-auto mb-5 animate__animated animate__zoomIn animate__delay-1s 1s "
             layout="fixed"
             formats={["auto", "webp", "avif"]}
             src="../images/mohan.jpg"
@@ -48,11 +48,11 @@ const Hero = () => {
             quality={95}
             alt="Profile picture"
           />  
-          <h2 data-aos="zoom-in">Hi, I'm Mohan and I develop websites.</h2> 
+          <h2 className="animate__animated animate__zoomIn animate__delay-2s 2s">Hi, I'm Mohan and I develop websites.</h2> 
           
-          <Link className="down-arrow" to="/#about" > 
+          <Link className="down-arrow animate__animated animate__zoomIn animate__delay-3s 3s" to="/#about" > 
             <StaticImage
-                className="mt-5 animate__animated animate__shakeY animate__delay-5s 	5s animate__slower  20s animate__repeat-3 	3"
+                className="mt-5 animate__animated animate__shakeY animate__delay-5s 5s animate__slower  20s animate__repeat-3 3"
                 // layout="fixed"
                 formats={["auto", "webp", "avif"]}
                 src="../images/icons/chevron-down-white.svg"

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 // import { useStaticQuery, graphql } from "gatsby" 
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => {
 //    const data = useStaticQuery(graphql`
@@ -26,7 +26,7 @@ const Footer = () => {
 //    const social = data.site.siteMetadata?.social
 
   return (
-    <footer className="d-flex justify-content-between">
+    <footer className="d-sm-flex justify-content-between">
 
       <p> Developed with &hearts; and ♫ in Bangalore  </p>
      

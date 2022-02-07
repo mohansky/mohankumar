@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #2A485C;
+  --accent-color: #FD9928;
+  --white-color: #fff;
+  --grey-color: #707070;
+  --black-color: #000;
+}
+
 @font-face {
   font-family: "Roboto-Regular";
   src: url("../fonts/Roboto-Regular.woff2");
@@ -13,6 +21,15 @@
   src: url("../fonts/Montserrat-SemiBold.woff2");
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; 
+}
+
+main{
+  min-height: 90vh;
+}
+
 
 h1, h2 {
   font-family: 'Montserrat', sans-serif;
@@ -26,14 +43,7 @@ p{
   font-family: 'Roboto-Regular', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-main{
-  min-height: 90vh;
-}
-
+/*********************** Hero ***********************/ 
 .overlay{
   background-color: hsla(204, 37%, 26%, 0.4);
   width: 100%;
@@ -58,23 +68,27 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--white-color);
   z-index: 100;
 }
 
 .avatar{
   border-radius: 50%;
-
-}
-
-.nav{
-  background-color: #2A485C;
 }
  
 
+/*********************** Navigation ***********************/ 
+
+.nav{
+  background-color: var(--primary-color);
+}
+
+
+/*********************** General Section ***********************/
+
 section{
   min-height: 50vh;
-  margin: 5rem;
+  margin: 5rem; 
 }
 
 .section-top{
@@ -82,48 +96,62 @@ section{
 }
 
 .white{
-  color: white;
+  color: var(--white-color);
 }
 
 .accent{
-  color: #FD9928;
+  color: var(--accent-color);
 }
 
+
+/*********************** Work Section ***********************/ 
+.work-link{
+  text-decoration: none!important;
+  color: inherit!important;
+}
+
+.work-link:hover{
+  color: #2a485c73!important;
+}
+
+.slick-prev:before {
+  content: url(../images/icons/chevron-left.svg)!important;
+}
+
+.slick-next:before {
+  content: url(../images/icons/chevron-right.svg)!important;
+}
+
+/*********************** Footer Section ***********************/ 
 footer{
-  background-color: #2A485C;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
   padding: 2rem 2rem 1rem 2rem;
 }
 
-
-.slick-prev::before, .slick-next::before {
-  color: #000!important;
-}
+/*********************** Contact Section ***********************/ 
 
 .hidden{
   display: none;
 }
 
-input{
+input, textarea{
   border-radius: 9px!important;
-}
-
-textarea{
-  border-radius: 9px!important;
+  border: 1px var(--grey-color) solid!important;
   resize: none!important;
 }
-
+ 
 .btn-form{
-  background-color: #fff!important;
-  color: #000!important;
-  border: 1px solid #2A485C!important;
+  background-color: var(--white-color)!important;
+  color: var(--black-color)!important;
+  border: 1px solid var(--primary-color)!important;
   padding: 0.5rem 5rem!important;
   border-radius: 2rem!important;
 }
 
 .btn-form:hover{
-  background-color: #2A485C!important;
-  color: #fff!important;
+  background-color: var(--primary-color)!important;
+  color: var(--white-color)!important;
   padding: 0.5rem 5rem!important;
   border-radius: 2rem!important;
 }

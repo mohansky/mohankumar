@@ -1,30 +1,37 @@
 /** SERVICES COMPONENT **/
 
 import * as React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {Container, Row, Col, Card, CardGroup } from 'react-bootstrap'
 
 const Services = () => {
-  // const data = useStaticQuery(graphql`
-  //   query BioQuery {
-  //     site {
-  //       siteMetadata {
-  //         author {
-  //           name
-  //           summary
-  //         }
-  //         social {
-  //           twitter
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query ServicesQuery {
+      services: markdownRemark(frontmatter: {title: {eq: "Services"}}) {
+          frontmatter {
+            title
+            subtitle1
+            subtitle2
+            subtitle3
+            description1
+            description2
+            serviceitems {
+              name
+              desc
+              img {
+                childImageSharp {
+                  gatsbyImageData( placeholder: TRACED_SVG, layout: FIXED, width: 100  )
+                }
+              }  
+            }
+          }
+        }
+      }
+  `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  // const author = data.site.siteMetadata?.author
-  // const social = data.site.siteMetadata?.social
+  // Set these values by editing "siteMetadata" in gatsby-config.js 
+  const service = data.services.frontmatter
 
   return (
     <section id="services">
@@ -32,82 +39,78 @@ const Services = () => {
         <Row>
         
           <Col md={4}>
-            <h4 className="text-end fw-bolder" data-aos="fade-right"> What <span className="accent"> I can do </span> <br/> for you</h4>
+            <h4 className="text-end fw-bolder" data-aos="fade-right">
+                {service.subtitle1} 
+              <span className="accent"> 
+                {service.subtitle2} </span> 
+              <br/> 
+                {service.subtitle3}
+            </h4>
           </Col>
           
           <Col md={1}></Col>
     
           <Col md={7}>
             <p data-aos="fade-left">
-              In technical terms, I'm a front-end developer and work with HTML, CSS and JavaScript to create interactive websites. 
-              I prefer static site generators like Hugo and Gatsby, but can also build your website with WordPress if you like. 
-              I take a mobile-first approach. 
+             {service.description1}
               <br/> <br/>
-
-              In plain words, I create that part of a website which is visible and with which you interact. 
-              Depending on your requirement and budget, I either work alone or in partnership with copywriters, 
-              graphic designers and back-end developers.
+              {service.description1}
             </p>
+
+            <CardGroup>
+              {service.serviceitems.map((items, index)=>{
+                const item = items 
+                const image = getImage(item.img.childImageSharp.gatsbyImageData)
+                  return(
+                    <Card key={index} className="border-0" data-aos="fade-right">
+                      <GatsbyImage
+                        className="mx-auto"
+                        image={image} 
+                        alt={item.name} 
+                        />
+                    <Card.Body className="text-center">
+                      <Card.Title>
+                        {item.name} 
+                      </Card.Title>
+                      <Card.Text>
+                        {item.desc}  
+                      </Card.Text> 
+                  </Card.Body>
+                </Card>
+              )})}
+            </CardGroup>        
+
           </Col>
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col md={5}></Col>
+
           <Col md={7}>
-          <CardGroup>
-            <Card className="border-0" data-aos="fade-right">
-              <StaticImage
-                  className="mx-auto"
-                  layout="fixed"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/icons/responsive.svg" 
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>Fully responsive</Card.Title>
-                  <Card.Text>
-                    to ensure compatibility across devices and browsers 
-                  </Card.Text> 
-                </Card.Body>
-              </Card>
-
-              <Card className="border-0" data-aos="fade-right">
-              <StaticImage
-                  className="mx-auto"
-                  layout="fixed"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/icons/accessibility.svg"
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>Accessiblity</Card.Title>
-                  <Card.Text>
-                    guidelines are followed to provide for all types of users
-                  </Card.Text> 
-                </Card.Body>
-              </Card>
-
-              <Card className="border-0" data-aos="fade-right">
-              <StaticImage
-                  className="mx-auto"
-                  layout="fixed"
-                  formats={["auto", "webp", "avif"]}
-                  src="../images/icons/optimized.svg" 
-                  quality={95}
-                  alt="arrow"
-                  /> 
-                <Card.Body className="text-center">
-                  <Card.Title>Optimized</Card.Title>
-                  <Card.Text>
-                    for performance, speed and cross-browser compatibility 
-                  </Card.Text> 
-                </Card.Body>
-              </Card>
+            <CardGroup>
+              {service.serviceitems.map((items, index)=>{
+                const item = items 
+                const image = getImage(item.img.childImageSharp.gatsbyImageData)
+                  return(
+                    <Card key={index} className="border-0" data-aos="fade-right">
+                      <GatsbyImage
+                        className="mx-auto"
+                        image={image} 
+                        alt={item.name} 
+                        />
+                    <Card.Body className="text-center">
+                      <Card.Title>
+                        {item.name} 
+                      </Card.Title>
+                      <Card.Text>
+                        {item.desc}  
+                      </Card.Text> 
+                  </Card.Body>
+                </Card>
+              )})}
             </CardGroup>        
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </section>
   )
