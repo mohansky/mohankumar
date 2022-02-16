@@ -1,4 +1,3 @@
- 
 // CUSTOM CSS
 import "./src/styles/style.scss"
 
@@ -15,6 +14,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 //Animate On Scroll Library
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css';
 AOS.init();
+
+ 
+
+
+

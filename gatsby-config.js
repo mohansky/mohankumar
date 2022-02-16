@@ -10,8 +10,26 @@ module.exports = {
     social: {
       twitter: `@mogsishere`,
     },
+    nav: [
+      { name: `About`, url: `/#hero`, },
+      { name: `Services`, url: `/#services`, },
+      { name: `Work`, url: `/#work`, },
+      { name: `Process`, url: `/#process`, },
+      { name: `Contact`, url: `/#contact`, }, 
+    ],
+    hero: { 
+      herotext: `Hi, I'm Mohan and I develop websites.`,
+      heroimgalt: `Photo by Jason Wong on Unsplash`, 
+      iconimgalt: `arrow`,
+    },
+    footer: {
+      footnote: `Developed with ♥ and ♫ in Bangalore `,
+      copyright: `Mohan Kumar © `,
+      email: `mohansky@gmail.com `,
+    },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
@@ -19,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/work`,
+        name: `work`,
       },
     },  
     {
@@ -73,12 +91,6 @@ module.exports = {
     //     routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
     //     enableWebVitalsTracking: true,
     //     selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
     {
