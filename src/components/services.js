@@ -58,7 +58,7 @@ const Services = () => {
               const item = items 
               const image = getImage(item.img.childImageSharp.gatsbyImageData)
                 return(
-                  <Col xs={6} sm={4} md={4} lg={2} key={index} className="border-0">
+                  <Col xs={4} sm={4} md={4} lg={2} key={index} className="border-0">
                     <GatsbyImage
                       className="mx-auto services-img"
                       image={image} 
@@ -77,7 +77,7 @@ const Services = () => {
               const item = items 
               const image = getImage(item.img.childImageSharp.gatsbyImageData)
                 return(
-                  <Col xs={6} sm={4} md={4} lg={2}  key={index} className="border-0">
+                  <Col xs={4} sm={4} md={4} lg={2}  key={index} className="border-0">
                     <GatsbyImage
                       className="mx-auto services-img"
                       image={image} 
