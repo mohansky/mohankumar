@@ -1,8 +1,6 @@
 /** CONTACT COMPONENT**/
 
-import * as React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react" 
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 
 const Contact = () => {
@@ -41,6 +39,7 @@ const Contact = () => {
             <p className="hidden">
               <label>
                 Dont fill this out if youre human: <input name="bot-field" type="hidden" value="contact" />
+                <input name="form-name" type="hidden" value="contact" />
               </label>
             </p>
             <Row>
