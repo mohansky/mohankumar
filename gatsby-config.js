@@ -5,6 +5,7 @@ module.exports = {
       name: `Mohan Kumar`,
       summary: `who lives and works in Bangalore building websites and other useful things.`,
     },
+    metaimg: `src/images/micon.png`,
     description: `Hi, I'm Mohan and I develop websites. I'm a freelance web designer based in Bangalore. I enjoy photography, travelling and a good Rasam every now and then.`,
     siteUrl: `https://mohankumardev.netlify.app`,
     social: {
@@ -23,7 +24,8 @@ module.exports = {
       iconimgalt: `arrow`,
     },
     footer: {
-      footnote: `Developed with ♥ and ♫ in Bangalore `,
+      // footnote: `Developed with ♥ and ♫ in Bangalore `,
+      footnote: `Built with Gatsbyjs`,
       copyright: `Mohan Kumar © `,
       email: `mohansky@gmail.com `,
     },
