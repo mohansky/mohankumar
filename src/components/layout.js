@@ -1,8 +1,7 @@
 import * as React from "react"
 import Header from "./header"
 import Footer from "./footer"
-import Hero from "./hero"
-import HeroCopy from "./herocopy"
+import Hero from "./hero" 
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
 
@@ -14,8 +13,7 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <>
-      {/* <HeroCopy/> */}
+      <> 
       <Hero/>
       <Header/>
       </>
