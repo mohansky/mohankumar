@@ -1,6 +1,8 @@
 /** CONTACT COMPONENT**/
 
-import * as React from "react" 
+import * as React from "react"
+// import { useStaticQuery, graphql } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 
 const Contact = () => {

@@ -9,7 +9,7 @@
 
 :root {
   --primary-color: #2A485C;
-  --accent-color: #FD9928;
+  --accent-color: #e67748;
   --white-color: #fff;
   --grey-color: #707070;
   --black-color: #000;
@@ -58,8 +58,9 @@ p{
 /*********************** General Section ***********************/
 
 section{ 
-  margin: 3rem 0;
+  margin: 3rem 0; 
   // padding: 12rem 0; 
+  z-index: 10;
 }
 
 .section-top{

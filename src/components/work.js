@@ -81,7 +81,7 @@ const posts = data.allMarkdownRemark.nodes
           
           return(
             <article key={post.fields.slug}> 
-              <Card className="border-0 p-3">
+              <Card className="border-0 m-3 p-3">
                 <GatsbyImage
                   className="shadow p-3 mb-5 bg-body" 
                   image={image} 

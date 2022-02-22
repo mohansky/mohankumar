@@ -25,7 +25,7 @@ const footer = data.site.siteMetadata?.footer
     <footer className="d-sm-flex justify-content-between">  
       <p> {footer.footnote} </p>
       <p> {footer.copyright} {new Date().getFullYear()} |     
-        <a className="footer-email" href="mailto:{footer.email}"> {footer.email}</a>
+        <a className="footer-email" href="mailto:mohansky@gmail.com"> {footer.email}</a>
       </p> 
     </footer>
   )

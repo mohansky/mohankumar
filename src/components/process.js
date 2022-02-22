@@ -43,9 +43,10 @@ const Process = () => {
               return(         
                 <div key={index} className="process-item">  
                   <div className="process-image-box"> 
-                  <div class="process-weight">
-                  <p> {item.weight}  </p>
-                  <h5 class="process-title-stack">{item.name}</h5> 
+                  <div class="process-weight fw-bold">
+                  <h5> {item.weight}  </h5>
+                  {/* mobile view only */}
+                  <h5 class="process-title-stack ms-3">{item.name}</h5> 
                 </div>
                 <GatsbyImage 
                   image={image} 
@@ -55,6 +56,7 @@ const Process = () => {
                 <h5 class="process-title">{item.name}</h5>
               </div> 
               <div className="process-text">
+                {/* mobile view only */}
                 <GatsbyImage 
                   image={image} 
                   alt={item.name} 

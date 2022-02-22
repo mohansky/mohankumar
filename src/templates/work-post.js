@@ -130,7 +130,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    previous: markdownRemark(frontmatter: {type: {eq: "Work"}}, id: { eq: $previousPostId }) {
+    previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -138,7 +138,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(frontmatter: {type: {eq: "Work"}}, id: { eq: $nextPostId }) {
+    next: markdownRemark(id: { eq: $nextPostId }) {
       fields {
         slug
       }
