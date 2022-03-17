@@ -19,8 +19,10 @@ const Hero = () => {
     }         
   `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js 
+  // Set these values by editing "siteMetadata" in gatsby-config.js  
   const hero = data.site.siteMetadata?.hero
+
+  // src="../images/herocopy1.png"
 
   return (
     <> 
@@ -29,7 +31,7 @@ const Hero = () => {
           className="hero-img" 
           objectFit= "fill"
           formats={["auto", "webp", "avif"]}
-          src="../images/hero.jpg"
+          src="../images/dotshero.svg"
           quality={95}
           alt={hero.heroimgalt}
           />  

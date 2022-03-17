@@ -90,7 +90,7 @@ const posts = data.allMarkdownRemark.nodes
               <Card.Body className="text-center ">
                 <Card.Title className="fw-bold">{title}</Card.Title>
                   <Card.Text> 
-                    <h5 className="work-type">{work.sitetype}</h5>
+                    {/* <h5 className="work-type">{work.sitetype}</h5> */}
                     <p>{work.desc}</p>   
                     <Link to={post.fields.slug} itemProp="url">
                       <Button className="btn-work"> View Details</Button> 
